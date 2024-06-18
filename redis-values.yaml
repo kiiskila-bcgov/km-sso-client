@@ -1,0 +1,15 @@
+replica:
+  replicaCount: 0
+master:
+  persistence:
+    enabled: true
+    size: 200Mi
+  resources:
+    requests:
+      cpu: "25m"
+      memory: "64Mi"
+    limits:
+      cpu: "50m"
+      memory: "128Mi"
+networkPolicy:
+  enabled: false
