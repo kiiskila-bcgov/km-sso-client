@@ -2,7 +2,7 @@ kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
   name: allow-from-same-namespace
-  namespace: ed84ea-test
+  namespace: ed84ea-prod
 spec:
   podSelector: {}
   ingress:

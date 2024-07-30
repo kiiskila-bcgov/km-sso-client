@@ -376,14 +376,14 @@ serviceAccount:
 ##
 containerSecurityContext:
   enabled: true
-  runAsUser: 1014970000
+  runAsUser: 1017180000
   runAsNonRoot: true
 ## @param podSecurityContext.enabled Enable security context for Node pods
 ## @param podSecurityContext.fsGroup Group ID for the volumes of the pod
 ##
 podSecurityContext:
   enabled: true
-  fsGroup: 1014970000
+  fsGroup: 1017180000
 ## Node conatiners' resource requests and limits
 ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
 ## We usually recommend not to specify default resources and to leave this as a conscious

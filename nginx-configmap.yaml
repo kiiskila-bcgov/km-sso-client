@@ -2,21 +2,21 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: nginx-server-blocks
-  namespace: ed84ea-test
+  namespace: ed84ea-prod
 immutable: false
 data:
   server_block.conf: |-
     server {
           listen 8081;
           listen [::]:8081;
-          server_name klamm-app-ed84ea-test.apps.silver.devops.gov.bc.ca;
+          server_name klamm-app-ed84ea-prod.apps.silver.devops.gov.bc.ca;
           error_page 401 403 = @login_required;
 
           # anyone with IDIR identity can access this
           location / {
             auth_request /auth/;
             auth_request_set $auth_status $upstream_status;
-            proxy_set_header Host klamm-app-ed84ea-test.apps.silver.devops.gov.bc.ca;
+            proxy_set_header Host klamm-app-ed84ea-prod.apps.silver.devops.gov.bc.ca;
             proxy_set_header X-Original-URI $request_uri;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto https;
@@ -59,7 +59,7 @@ data:
           }
 
           location @login_required {
-            return 302 https://klamm-app-ed84ea-test.apps.silver.devops.gov.bc.ca/sso-login?relay=$request_uri;
+            return 302 https://klamm-app-ed84ea-prod.apps.silver.devops.gov.bc.ca/sso-login?relay=$request_uri;
           }
 
         }

@@ -474,7 +474,7 @@ master:
       - ReadWriteOnce
     ## @param master.persistence.size Persistent Volume size
     ##
-    size: 200Mi
+    size: 100Mi
     ## @param master.persistence.annotations Additional custom annotations for the PVC
     ##
     annotations: {}
@@ -735,7 +735,7 @@ replica:
   ##
   podSecurityContext:
     enabled: true
-    fsGroup: 1014970000
+    fsGroup: 1017180000
   ## Configure Container Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param replica.containerSecurityContext.enabled Enabled Redis&reg; replicas containers' Security Context
@@ -925,7 +925,7 @@ replica:
       - ReadWriteOnce
     ## @param replica.persistence.size Persistent Volume size
     ##
-    size: 200Mi
+    size: 100Mi
     ## @param replica.persistence.annotations Additional custom annotations for the PVC
     ##
     annotations: {}
